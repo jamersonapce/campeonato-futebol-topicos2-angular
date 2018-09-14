@@ -5,30 +5,6 @@
     </div>
 
   </section>
-
-  <!-- <section>
-    <div class="container">
-      <form method="post" #frm="ngForm" (ngSubmit)="criar(frm)">
-        <div class="form-group">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome"
-            class="form-control" placeholder="Nome"
-            [(ngModel)]="contato.nome" required/>
-        </div>
-
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email"
-            class="form-control" placeholder="E-mail"
-            [(ngModel)]="contato.email" required email/>
-        </div>
-
-        <button type="submit" class="btn btn-primary"
-          [disabled]="frm.invalid">Salvar</button>
-      </form>
-    </div>
-  </section> -->
-
   <section class="mt-5">
     <div class="container">
 
@@ -42,7 +18,7 @@
         </div>
 
         <div class="fixed-action-btn hide-on-med-and-up">
-          <a class="btn-floating btn-large">
+          <a class="btn-floating btn-large" [routerLink]="['/jogador/form']">
             <i class="large material-icons">add</i>
           </a>
         </div>
@@ -76,14 +52,12 @@
               <td class=" text-center w-2">{{jogador.genero}}</td>
               <td class=" text-center w-10">{{jogador.time.nome}}</td>
               <td class=" text-center">
-                <a class=" waves-effect waves-light">
+                <a class=" waves-effect waves-light" [routerLink]="['/jogador/form', jogador.id]">
                   <i class="material-icons">mode_edit</i>
                 </a>
                 <a class=" waves-effect waves-light">
                   <i class="material-icons">delete_forever</i>
                 </a>
-                
-                <!-- <button type="button" name="editar" class="btn btn-outline-primary btn-small">editar</button> -->
               </td>
             </tr>
           </tbody>

@@ -10,11 +10,23 @@ const URL: string = 'https://campeonatofutebolapi.herokuapp.com/jogador';
 })
 export class JogadorService {
 
-  private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' })
+  private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json'})
 
   constructor(private http: HttpClient) { }
 
   listaJogadores(): Observable<Jogador[]>{
     return this.http.get<Jogador[]>(URL);
   }
+
+  salva(jogador: Jogador): Observable<Jogador> {
+    return this.http
+               .post<Jogador>(URL, jogador, { headers: this.httpHeaders });
+
+  }
+
+  getJogador(id): Observable<Jogador> {
+    return this.http
+               .get<Jogador>(`${URL}/${id}`);
+  }
+
 }

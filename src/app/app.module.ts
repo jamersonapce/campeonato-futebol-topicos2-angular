@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { JogadorModule } from './jogador/jogador.module';
 import { AppRoutingModule } from './app.routing';
+import { TimeComponent } from './time/time.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    TimeComponent
   ],
   imports: [
     BrowserModule,

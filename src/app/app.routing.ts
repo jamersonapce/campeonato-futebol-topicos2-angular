@@ -9,7 +9,6 @@ const rotas : Routes = [
     {path: 'jogador/pesquisa', component: PesquisaJogadorComponent  },
     {path: 'jogador/form', component: FormJogadorComponent  },
     {path: 'jogador/form/:id', component: FormJogadorComponent }
-    // {path: '**', component: Erro404Component  }
   
 ];
 
