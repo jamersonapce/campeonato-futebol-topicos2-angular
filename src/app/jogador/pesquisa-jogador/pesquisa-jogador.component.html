@@ -1,0 +1,129 @@
+<main role="main">
+  <section class="my-4">
+    <div class="container">
+      <h5>Lista de Jogadores</h5>
+    </div>
+
+  </section>
+
+  <!-- <section>
+    <div class="container">
+      <form method="post" #frm="ngForm" (ngSubmit)="criar(frm)">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome"
+            class="form-control" placeholder="Nome"
+            [(ngModel)]="contato.nome" required/>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email"
+            class="form-control" placeholder="E-mail"
+            [(ngModel)]="contato.email" required email/>
+        </div>
+
+        <button type="submit" class="btn btn-primary"
+          [disabled]="frm.invalid">Salvar</button>
+      </form>
+    </div>
+  </section> -->
+
+  <section class="mt-5">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="dataTables_filter">
+          <label>Pesquisar:
+            <input type="search" class="" placeholder="" aria-controls="data-table-row-grouping">
+          </label>
+
+        </div>
+
+        <div class="fixed-action-btn hide-on-med-and-up">
+          <a class="btn-floating btn-large">
+            <i class="large material-icons">add</i>
+          </a>
+        </div>
+        <div class="col col-md-1 s7 hide-on-small-only">
+          <a class="btn-floating btn-large waves-effect waves-light">
+            <i class="material-icons">add</i>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table id="data-table-row-grouping" class="display" cellspacing="0">
+          <thead class="thead-light text-center">
+            <tr>
+              <th>Código</th>
+              <th class="w-30">Nome</th>
+              <th class=" text-center w-5">Altura</th>
+              <th class=" text-center w-5">Nascimento</th>
+              <th class=" text-center w-2">Gênero</th>
+              <th class=" text-center w-10">Time</th>
+              <th class=" text-center">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let jogador of jogadores">
+              <td class="text-center w-5">{{jogador.id}}</td>
+              <td>{{jogador.nome}}</td>
+              <td class=" text-center w-5">{{jogador.altura | number:'1.2'}}</td>
+              <td class=" text-center w-5">{{jogador.nascimento | date:'dd/MM/yyyy'}}</td>
+              <td class=" text-center w-2">{{jogador.genero}}</td>
+              <td class=" text-center w-10">{{jogador.time.nome}}</td>
+              <td class=" text-center">
+                <a class=" waves-effect waves-light">
+                  <i class="material-icons">mode_edit</i>
+                </a>
+                <a class=" waves-effect waves-light">
+                  <i class="material-icons">delete_forever</i>
+                </a>
+                
+                <!-- <button type="button" name="editar" class="btn btn-outline-primary btn-small">editar</button> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="col s8 mt-5">
+        <ul class="pagination">
+          <li class="disabled">
+            <a href="#!">
+              <i class="material-icons">chevron_left</i>
+            </a>
+          </li>
+          <li class="active">
+            <a href="#!">1</a>
+          </li>
+          <li class="waves-effect">
+            <a href="#!">2</a>
+          </li>
+          <li class="waves-effect">
+            <a href="#!">3</a>
+          </li>
+          <li class="waves-effect">
+            <a href="#!">4</a>
+          </li>
+          <li class="waves-effect">
+            <a href="#!">5</a>
+          </li>
+          <li class="waves-effect">
+            <a href="#!">
+              <i class="material-icons">chevron_right</i>
+            </a>
+          </li>
+        </ul>
+        <!-- <a class="btn-floating waves-effect waves-light float-right">
+            <i class="material-icons">add</i>
+        </a> -->
+
+      </div>
+    </div>
+  </section>
+</main>
